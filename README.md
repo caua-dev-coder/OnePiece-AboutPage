@@ -16,7 +16,7 @@ Ferramentas usadas :
 
 <br>
 
-<h1>VEJA AS IAMGENS :</h1>
+<h1>Imagens do Projeto :</h1>
 
 <img src="https://github.com/caua-dev-coder/Projeto-One-Piece/blob/main/img/Captura%20de%20tela%202024-02-13%20161350.png?raw=true">
 
