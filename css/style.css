@@ -1,0 +1,171 @@
+body {
+  background-color: black;
+  overflow: hidden; /* OverFlow seria para ocultar as partes que sobram no nosso navegador, laterais e tudo mais. */
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+  background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+  display: none;
+  height: 100vh;
+}
+
+main .personagem.selecionado {
+  display: block;
+  animation: fadeIn 0.5s;
+  transition: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+main .personagem .imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Usar Objetct FIT faz com que a imagem não estoure caso estiquemos ela ele mantém as dimensões da imagem mas deixa ela maior */
+}
+
+.conteudo {
+  /* background-color: orange; Podemos usar o background color nos ajuda a mostrar oque realmente é o elemento e isso ajuda */
+  position: absolute; /* Posiciona o elemento de forma absoluta na página, tiramos ele da posição padrão numa página */
+  top: 0;
+  left: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 400px;
+  z-index: 1;
+}
+
+.conteudo .nome-personagem {
+  color: #fff;
+  font-size: 48px;
+  font-family: "Secular One";
+  font-weight: 400;
+  margin-bottom: 20px;
+
+	transform: translateX(-180%);
+	opacity: 0;
+	animation: slide-in-anim 1.2s ease-out forwards;
+}
+
+.conteudo .descricao {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Rubik";
+  line-height: 24px;
+
+  
+	transform: translateX(-180%);
+	opacity: 0;
+	animation: slide-in-anim 1.2s ease-out forwards;
+}
+
+.conteudo .logo {
+  background-image: url(../img/one-piece-logo.png);
+  background-size: cover; /* O Background cover, cobre a aréa que foi determinada para height e width */
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+  
+	transform: translateX(-180%);
+	opacity: 0;
+	animation: slide-in-anim 1.2s ease-out forwards;
+}
+
+.botoes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 180px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.botoes .botao img {
+  border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+  transform: scale(1.2);
+  /* box-shadow: 0 0 10px #d9d9d9; */
+  transition: 0.5s;
+}
+
+.botoes .botao.selecionado.luffy:hover {
+  -webkit-box-shadow: 0px 0px 22px 6px rgb(224, 67, 67);
+  -moz-box-shadow: 0px 0px 22px 6px rgb(224, 67, 67);
+  box-shadow: 0px 0px 22px 6px rgb(224, 67, 67);
+}
+
+.botoes .botao.selecionado.nami:hover {
+  -webkit-box-shadow: 0px 0px 22px 6px rgb(255, 94, 0);
+  -moz-box-shadow: 0px 0px 22px 6px rgb(255, 106, 0);
+  box-shadow: 0px 0px 22px 6px rgb(234, 117, 0);
+}
+
+.botoes .botao.selecionado.chopper:hover {
+  -webkit-box-shadow: 0px 0px 22px 6px rgb(0, 135, 245);
+  -moz-box-shadow: 0px 0px 22px 6px rgb(0, 106, 255);
+  box-shadow: 0px 0px 22px 6px rgb(0, 153, 255);
+}
+
+.botoes .botao.selecionado.sanji:hover {
+  -webkit-box-shadow: 0px 0px 22px 6px rgb(253, 207, 0);
+  -moz-box-shadow: 0px 0px 22px 6px rgb(253, 228, 0);
+  box-shadow: 0px 0px 22px 6px rgb(255, 222, 4);
+}
+
+.botoes .botao.selecionado.zoro:hover {
+  -webkit-box-shadow: 0px 0px 22px 6px rgb(7, 237, 11);
+  -moz-box-shadow: 0px 0px 22px 6px rgb(67, 224, 67);
+  box-shadow: 0px 0px 22px 6px rgb(0, 255, 38);
+}
+
+@keyframes slide-in-anim {
+	20% {
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(-10%);
+	}
+	75% {
+		transform: translateX(-10%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-10%);
+	}
+}
+
+
+
